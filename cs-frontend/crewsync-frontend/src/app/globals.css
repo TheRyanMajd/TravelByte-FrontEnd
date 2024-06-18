@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.dotted {
+  width: 100%;
+  height: 100%;
+  background-color: #5f43b2;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  animation: moveDots 2s linear infinite;
+}
+
+@keyframes moveDots {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+.blk {
+  background-color: #010101;
+}
+
+strong {
+  font-weight: normal; /* Removes the bold effect */
+/*  color: red;          /* Changes the text color to red */
+}
+strong:hover {
+  
+  font-weight: bold;
+  animation: normal 3s infinite;
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 10%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 5px var(--animation-color);
+  color: red;
+  
+}
+.impress {
+  content: url('../../public/cs.gif');
+}
+.impress:hover {
+  content: url('../../public/cs.png');
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@media (max-width: 640px) { /* Adjust this breakpoint as needed */
+  .section-text { /* Ensure your text has this class or adjust the selector accordingly */
+    font-size: 14px; /* Adjust the size as needed */
+  }
+}
