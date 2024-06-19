@@ -17,7 +17,7 @@ export default function Form () {
       email: email,
       message: message,
     }
-    axios.post('http://localhost:8000/', formData)
+    axios.post('https://crewsync-email-api.onrender.com/', formData)
       .then((response) => {
         console.log(response.data)
       })
