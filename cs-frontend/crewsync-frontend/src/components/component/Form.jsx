@@ -2,9 +2,31 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import React, { useState } from "react"
+import axios from "axios"
+
+
 export default function Form () {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("") // Add this line
+  const [message, setMessage] = useState("")
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const formData = {
+      name: name,
+      email: email,
+      message: message,
+    }
+    axios.post('localhost:8000/', formData)
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
     return (
-        <div className="container px-4 md:px-6">
+        <div className="mx-auto container px-4 md:px-6">
             <div className="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-2">
               <div className="space-y-4">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Contact Us</div>
@@ -14,37 +36,32 @@ export default function Form () {
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
                   Have questions or ready to get started? Fill out the form below and our team will be in touch.
                 </p>
-                <form className="flex flex-col gap-4">
-                  <Input type="text" placeholder="Name" className="max-w-lg" />
-                  <Input type="email" placeholder="Email" className="max-w-lg" />
-                  <Textarea placeholder="Message" className="max-w-lg" rows={4} />
-                  <Button type="submit" className="max-w-lg">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <Input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="max-w-lg text-black"
+                /> 
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="max-w-lg text-black"
+                />
+                <Textarea
+                  placeholder="Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="max-w-lg text-black"
+                  rows={4}
+                />
+                <Button type="submit" className="max-w-lg rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
                     Submit
-                  </Button>
+                </Button>
                 </form>
-              </div>
-              <div className="flex flex-col items-start space-y-4">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  Get Started
-                </div>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-                  Ready to streamline your crew scheduling? Sign up for a free trial or schedule a demo with our team.
-                </p>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link
-                    href="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                    prefetch={false}
-                  >
-                    Start Free Trial
-                  </Link>
-                  <Link
-                    href="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray"
-                    prefetch={false}
-                  >
-                    </Link>
-                </div>
               </div>
             </div>
           </div>
