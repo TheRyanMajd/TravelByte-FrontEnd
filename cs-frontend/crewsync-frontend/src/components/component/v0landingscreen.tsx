@@ -1,15 +1,15 @@
 'use client'
-import Link from "next/link"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import { Chivo, Libre_Franklin } from 'next/font/google'
+import Image from 'next/image'
+import Link from "next/link"
+import { JSX, SVGProps, useEffect, useState } from 'react'
 import CS from '../../../public/crewsyncblack.svg'
-import laptop from '../../../public/enhance.png';
-import Form from '../component/Form.jsx';
-import { JSX, SVGProps, useEffect, useState } from 'react';
-
-import { Libre_Franklin, Chivo } from 'next/font/google';
+import laptop from '../../../public/enhance.png'
+import Form from '../component/Form.jsx'
 
 export const libereFranklin = Libre_Franklin({
   subsets: ['latin'],
@@ -76,7 +76,7 @@ export default function v0landingscreen() {
                   </Link>
                 </div>
               </div>
-              <img
+              <Image
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square impress"
                 src={CS.src}
                 width={CS.width}
@@ -127,10 +127,10 @@ export default function v0landingscreen() {
                   </li>
                 </ul>
               </div>
-              <img
+              <Image
                 src={laptop.src}
-                width="550"
-                height="330"
+                width={550}
+                height={330}
                 alt="Features"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               />
@@ -165,7 +165,7 @@ export default function v0landingscreen() {
                       </div>
                     </div>
                     <p className="text-gray-500 dark:text-gray-400">
-                      "We didn’t have a lot of control over the schedule once it was issued so it was merely to download."
+                      &ldquo;We didn&rsquo;t have a lot of control over the schedule once it was issued so it was merely to download.&rdquo;
                     </p>
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export default function v0landingscreen() {
                       </div>
                     </div>
                     <p className="text-gray-500 dark:text-gray-400">
-                      "I was stuck in the TSA line and we were told that it was due to a scheduling error"
+                      &ldquo;I was stuck in the TSA line and we were told that it was due to a scheduling error&rdquo;
                     </p>
                   </div>
                 </div>
