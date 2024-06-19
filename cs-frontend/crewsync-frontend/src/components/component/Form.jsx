@@ -1,9 +1,9 @@
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import axios from "axios"
 import Link from "next/link"
 import React, { useState } from "react"
-import axios from "axios"
 
 
 export default function Form () {
@@ -17,7 +17,7 @@ export default function Form () {
       email: email,
       message: message,
     }
-    axios.post('localhost:8000/', formData)
+    axios.post('http://localhost:8000/', formData)
       .then((response) => {
         console.log(response.data)
       })
