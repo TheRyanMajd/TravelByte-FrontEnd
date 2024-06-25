@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -69,12 +73,10 @@ strong:hover {
   color: red;
   
 }
-.impress {
+.gif {
   content: url('../../public/cs.gif');
 }
-.impress:hover {
-  content: url('../../public/cs.png');
-}
+
 
 
 @layer utilities {
