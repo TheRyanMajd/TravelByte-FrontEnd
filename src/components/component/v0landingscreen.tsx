@@ -85,7 +85,7 @@ export default function v0landingscreen() {
                   
                 </div>
               </div>
-              <Image
+              <Image unoptimized
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square gif"
                 src={CS.src}
                 width={CS.width}
