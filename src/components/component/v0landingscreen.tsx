@@ -147,7 +147,7 @@ export default function v0landingscreen() {
           </div>
         </section>
         <section id='Current-Sentiment' className="w-full py-12 md:py-24 lg:py-32 dotted">
-          <div className="container mx-auto px-4 md:px-6 ">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
@@ -179,6 +179,7 @@ export default function v0landingscreen() {
                   </div>
                 </div>
               </div>
+
               <div className="flex flex-col justify-center space-y-4">
                 <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
                   <div className="space-y-4">
@@ -198,8 +199,51 @@ export default function v0landingscreen() {
                   </div>
                 </div>
               </div>
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <Avatar>
+                        <AvatarImage src="/placeholder-user.jpg" />
+                        <AvatarFallback>LZ</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium leading-none">Lukas Z.</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Aviation Professional</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      &ldquo;We use excel it&rsquo;s a massive spreadsheet. I&rsquo;m not quite sure how our schedulers figure that out&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <Avatar>
+                        <AvatarImage src="/placeholder-user.jpg" />
+                        <AvatarFallback>AV</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <p className="text-sm font-medium leading-none">Ava Ventrana</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Flight Attendent</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      &ldquo;I thought it was a staffing issue, but we use our HR provider&rsquo;s scheduling software and it sucks.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
+          
+        
         </section>
         <section id='Pricing' className="w-full py-12 md:py-24 lg:py-32 bg-black-100">
           <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
