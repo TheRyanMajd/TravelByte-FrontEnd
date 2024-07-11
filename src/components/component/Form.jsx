@@ -36,7 +36,7 @@ export default function Form () {
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
                   Have questions or ready to get started? Fill out the form below and our team will be in touch.
                 </p>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                {/* <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <Input
                 type="text"
                 placeholder="Name"
@@ -58,12 +58,39 @@ export default function Form () {
                   className="max-w-lg text-black"
                   rows={4}
                 />
-                <Button type="submit" className="max-w-lg rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
+               
+                <Button href="mailto:travelbyte24@gmail.com, ryan1130124@gmail.com, ashvikv12@gmail.com" type="submit" className="max-w-lg rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
                     Submit
                 </Button>
-                </form>
+
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
+                <Link href="mailto:travelbyte24@gmail.com, ryan1130124@gmail.com, ashvikv12@gmail.com"
+                className="rounded-md bg-gray-900 px-4 text-lg font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                >Email is the quickest way to reach us!</Link> 
+                </p>
+           
+                </form> */}
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
+                <Link href="mailto:travelbyte24@gmail.com, ryan1130124@gmail.com, ashvikv12@gmail.com"
+                className="rounded-md bg-gray-900 px-4 text-lg font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                >Email is the quickest way to reach us!</Link> 
+                </p>
               </div>
+              <div className="space-y-4">
+              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Email</div>
+              <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+                  Email Us!
+                </h2>
+                
+                {/* <Button type="submit" className="max-w-lg rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
+                    Email
+                </Button> */}
+              </div>
+
+
+
             </div>
+            
           </div>
     )
 }
