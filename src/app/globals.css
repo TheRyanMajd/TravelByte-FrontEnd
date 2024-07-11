@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 99%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 45%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -30,10 +69,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.gray {
+color: black;
+  background-color: white;
+}
+
 .dotted {
   width: 100%;
   height: 100%;
-  background-color: #5f43b2;
+  background-color: #E11D49;
   background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
   background-size: 30px 30px;
   animation: moveDots 2s linear infinite;
@@ -52,29 +96,8 @@ body {
 }
 
 strong {
-  font-weight: normal; /* Removes the bold effect */
-/*  color: red;          /* Changes the text color to red */
-}
-strong:hover {
-  
-  font-weight: bold;
-  animation: normal 3s infinite;
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color));
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 10%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 5px var(--animation-color);
-  color: red;
-  
-}
-.gif {
-  content: url('../../public/cs.gif');
+  font-weight: bold; /* Removes the bold effect */
+  color: #E11D49;
 }
 
 
@@ -88,4 +111,20 @@ strong:hover {
   .section-text { /* Ensure your text has this class or adjust the selector accordingly */
     font-size: 14px; /* Adjust the size as needed */
   }
+}
+
+
+
+#bg-vid {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  filter:brightness(.5) blur(4px);
 }

@@ -1,6 +1,6 @@
 // import { disableReactDevTools } from "@fvilers/disable-react-devtools";
-import Image from "next/image";
-import LandingScreen from '../components/component/v0landingscreen'; // Correct the component name and import statement
+'use client'
+import LandingScreen from '../components/component/v1landingscreen'; // Correct the component name and import statement
 // if (process.env.NODE_ENV === 'production') {
 //   disableReactDevTools();
 // }
