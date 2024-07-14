@@ -35,7 +35,7 @@ export default function Component() {
       <main className="flex-1">
         <section className="w-full py-16 md:py-24 lg:py-32">
           <div className="mx-auto container px-4 md:px-6">
-          <video id="bg-vid" autoPlay loop muted>
+          <video id="bg-vid" autoPlay loop muted playsInline>
                 <source src="https://videos.pexels.com/video-files/4320049/4320049-hd_1920_1080_30fps.mp4" type="video/mp4"/>
             </video>
             <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_600px]">
