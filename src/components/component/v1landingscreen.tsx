@@ -8,13 +8,28 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import Card from "@/components/ui/card"
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect } from "react"
 import MockupImage from "../../../public/ptype.jpg"
+export const AOSInit = () => {
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-quad",
+      duration: 1000,
+      once: false,
+    });
+  }, []);
 
+  return null;
+};
 export default function Component() {
+
   return (
     <div className="flex flex-col min-h-[100dvh]">
+      <AOSInit />
       <header className="px-4 lg:px-6 h-14 flex items-center">
         <Link href="#" className="flex items-center justify-center" prefetch={false}>
           <TruckIcon className="h-6 w-6" />
@@ -35,13 +50,13 @@ export default function Component() {
       <main className="flex-1">
         <section className="w-full py-16 md:py-24 lg:py-32">
           <div className="mx-auto container px-4 md:px-6">
-          <video id="bg-vid" autoPlay loop muted playsInline>
-                <source src="https://videos.pexels.com/video-files/4320049/4320049-hd_1920_1080_30fps.mp4" type="video/mp4"/>
+            <video id="bg-vid" autoPlay loop muted playsInline>
+              <source src="https://videos.pexels.com/video-files/4320049/4320049-hd_1920_1080_30fps.mp4" type="video/mp4" />
             </video>
             <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col justify-center space-y-4" data-aos='fade-up' data-aos-duration="400">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none" >
                     Streamline Your Trucking Journey
                   </h1>
                   <p className="max-w-[600px] md:text-xl">
@@ -69,15 +84,16 @@ export default function Component() {
                 /> */}
               </div>
             </div>
-            
+
           </div>
         </section>
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted gray">
           <div className="mx-auto container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
+              <div className="space-y-2" data-aos='fade-down' data-aos-duration="400">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Key Features</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl" >
                   Unlock the Power of Our Trucking App
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -86,7 +102,7 @@ export default function Component() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col justify-center space-y-4" data-aos='fade-right' data-aos-duration="400" >
                 <ul className="grid gap-6">
                   <li>
                     <div className="grid gap-1">
@@ -118,10 +134,12 @@ export default function Component() {
                 </ul>
               </div>
               <Image
+                data-aos='flip-left'
+                data-aos-duration='400'
                 src={MockupImage}
-                width="600"
+                width="300"
                 alt="Truck Dashboard"
-                className="mx-auto aspect-auto overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                className="mx-auto aspect-auto overflow-hidden rounded-xl object-cover object-center sm:-full"
               />
             </div>
           </div>
@@ -129,7 +147,7 @@ export default function Component() {
         <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
+              <div className="space-y-2" data-aos='fade-up' data-aos-duration='400' data-aos-easing='ease-in-out'>
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm gray">Testimonials</div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What Our Users Say</h2>
                 <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -138,17 +156,20 @@ export default function Component() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-              <Card className="p-6 gray rounded-lg animate-accordion-down" user="John L." job="Long-Haul Trucker" inital="JL" desc="This app has been a game-changer for my trucking business. The navigation and rest stop features have saved me so much time and hassle."/>
-              <Card className="p-6 gray rounded-lg" user="Pete B." job="Regional Trucker" inital="PB" desc="I love how the App helps me plan my trips and find the best rest stops along the way. It's made my job more efficient."/>
+              <Card className="p-6 gray rounded-lg animate-accordion-down" user="John L." job="Long-Haul Trucker" inital="JL" desc="This app has been a game-changer for my trucking business. The navigation and rest stop features have saved me so much time and hassle." />
+              <Card className="p-6 gray rounded-lg" user="Pete B." job="Regional Trucker" inital="PB" desc="I love how the App helps me plan my trips and find the best rest stops along the way. It's made my job more efficient." />
             </div>
           </div>
         </section>
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted gray">
-          <Contact/>
+          <div data-aos='fade-up' data-aos-duration='400'>
+            <Contact />
+          </div>
+
         </section>
       </main>
 
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dotted ">
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dotted">
         <p className="text-xs ">&copy; 2024 TravelByte Inc. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link href="#" className="text-xs hover:animate-pulse underline-offset-4" prefetch={false}>
@@ -162,6 +183,12 @@ export default function Component() {
           </Link>
         </nav>
       </footer>
+
+
+      <script>
+        AOS.init();
+      </script>
+
     </div>
   )
 }
