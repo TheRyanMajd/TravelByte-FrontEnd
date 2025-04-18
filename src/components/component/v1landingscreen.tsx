@@ -26,7 +26,7 @@ export const AOSInit = () => {
   return null;
 };
 export default function Component() {
-
+  <AOSInit />
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <AOSInit />
@@ -75,13 +75,6 @@ export default function Component() {
                 </div>
               </div>
               <div className="relative">
-                {/* <Image unoptimized
-                  src="/placeholder"
-                  width="600"
-                  height="400"
-                  alt="Truck on the Road"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-                /> */}
               </div>
             </div>
 
@@ -170,7 +163,7 @@ export default function Component() {
       </main>
 
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t dotted">
-        <p className="text-xs ">&copy; 2024 TravelByte Inc. All rights reserved.</p>
+        <p className="text-xs ">&copy; 2025 TravelByte Inc. All rights reserved.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <Link href="#" className="text-xs hover:animate-pulse underline-offset-4" prefetch={false}>
             Privacy Policy

@@ -46,7 +46,7 @@ Have questions or feedback? We’d love to hear from you.
 
 **Email:** founder@travelbyte.net
 
-© 2024 TravelByte Inc. All rights reserved.
+© 2025 TravelByte Inc. All rights reserved.
 
 ````
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
