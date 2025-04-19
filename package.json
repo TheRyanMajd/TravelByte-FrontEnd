@@ -1,7 +1,7 @@
 {
   "homepage": "https://travelbyte.net",
   "name": "travelbyte-frontend",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
